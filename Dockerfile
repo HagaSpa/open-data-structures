@@ -1,5 +1,3 @@
-FROM gcc:10.2.0
-
-RUN apt update && apt install -y gdb
+FROM python:3.9-alpine
 
 WORKDIR /workspace
