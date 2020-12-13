@@ -1,4 +1,5 @@
 #include <cassert>
+#include <stdlib.h>
 
 template<typename T>
 
@@ -9,10 +10,7 @@ public:
     int length;
 
     // constructor
-    array(int len) {
-        length = len;
-        a = new T[length];   
-    }
+    array(int len);
 
     // index access
     T& operator[](int i) {
@@ -30,8 +28,8 @@ public:
     }
 };
 
-int main() {
-    array<T> a;
-    a = array(6);
-
+template<class T>
+array<T>::array(int len) {
+	length = len;
+	a = new T[length];
 }
