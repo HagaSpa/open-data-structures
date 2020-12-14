@@ -12,6 +12,11 @@ public:
     T set(int i, T x);
 };
 
+template<class T>
+ArrayStack<T>::ArrayStack() : a(1) {
+    n = 0;		
+}
+
 template<class T> inline
 int ArrayStack<T>::size() {
     return n;
@@ -28,12 +33,6 @@ T ArrayStack<T>::set(int i, T x) {
     a[i] = x;
     return y;
 }
-
-template<class T>
-ArrayStack<T>::ArrayStack() : a(1) {
-    n = 0;		
-}
-
 
 // entry point
 #include<iostream>
