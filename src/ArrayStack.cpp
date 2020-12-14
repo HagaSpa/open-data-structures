@@ -41,4 +41,6 @@ using namespace std;
 int main() {
     ArrayStack<int> l;
     cout << l.get(0) << endl;
+    l.set(0, 10);
+    cout << l.get(0) << endl;
 }
