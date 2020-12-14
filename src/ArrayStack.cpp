@@ -2,7 +2,7 @@
 
 template<class T>
 class ArrayStack {
-private:
+protected:
     array<T> a;
     int n;
     int size();
