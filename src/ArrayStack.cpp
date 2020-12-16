@@ -1,4 +1,5 @@
 #include "array.cpp"
+#include "utils.cpp"
 
 template<class T>
 class ArrayStack {
@@ -6,6 +7,7 @@ protected:
     array<T> a;
     int n;
     int size();
+    virtual void resize();
 public:
     ArrayStack();
     T get(int i);
@@ -32,6 +34,14 @@ T ArrayStack<T>::set(int i, T x) {
     T y = a[i];
     a[i] = x;
     return y;
+}
+
+template<class T>
+void ArrayStack<T>::resize() {
+    array<T> b(max(2*n, 1));
+    for (int i=0; i<n; i++)
+        b[i] = a[i];
+    a = b;
 }
 
 // entry point
