@@ -6,12 +6,13 @@ class ArrayStack {
 protected:
     array<T> a;
     int n;
-    int size();
     virtual void resize();
 public:
     ArrayStack();
     T get(int i);
     T set(int i, T x);
+    int size();
+    virtual void add(int i, T x);
 };
 
 template<class T>
@@ -44,12 +45,28 @@ void ArrayStack<T>::resize() {
     a = b;
 }
 
-// entry point
+// insert.
+template<class T>
+void ArrayStack<T>::add(int i, T x) {
+    if (n+1 > a.length) resize();
+    for (int j=n; j>i; j--) {
+        a[j] = a[j-1];
+    }
+    a[i] = x;
+    n++;
+}
+
+// entry point_
 #include<iostream>
 using namespace std;
 int main() {
     ArrayStack<int> l;
-    cout << l.get(0) << endl;
-    l.set(0, 10);
-    cout << l.get(0) << endl;
+    
+    l.set(0, 1);    
+    l.add(0, 2);
+    l.add(1, 3);
+
+    for (int i=0; i<l.size(); i++) {
+        cout << l.get(i) << endl;
+    }
 }
