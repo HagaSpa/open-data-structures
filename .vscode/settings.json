@@ -47,6 +47,9 @@
         "compare": "cpp",
         "concepts": "cpp",
         "ranges": "cpp",
-        "cassert": "cpp"
+        "cassert": "cpp",
+        "cerrno": "cpp",
+        "ios": "cpp",
+        "queue": "cpp"
     }
 }
